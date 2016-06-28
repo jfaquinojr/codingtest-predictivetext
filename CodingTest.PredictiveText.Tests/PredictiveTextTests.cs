@@ -61,5 +61,14 @@ namespace CodingTest.PredictiveText.Tests
 
 			Assert.IsTrue(results.Count == 0);
 		}
+
+		[TestMethod]
+		public void TestNoIndexOutOfRange()
+		{
+			var predictor = new TextPredictor();
+			var results = predictor.Predict(435566893, _testWords.ToList());
+
+			Assert.IsTrue(true);
+		}
 	}
 }

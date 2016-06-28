@@ -30,7 +30,12 @@ namespace CodingTest.PredictiveText.Core
 				var tempResult = new List<string>();
 				foreach (char letter in letters)
 				{
-					tempResult.AddRange(result.FindAll((s) => { return s.IndexOf(letter.ToString(), i, 1, StringComparison.InvariantCultureIgnoreCase) >= 0; }));
+					tempResult.AddRange(result.FindAll((s) => {
+						if (i >= s.Length)
+							return false;
+
+						return s.IndexOf(letter.ToString(), i, 1, StringComparison.InvariantCultureIgnoreCase) >= 0;
+					}));
 				}
 				result = tempResult;
 			}
