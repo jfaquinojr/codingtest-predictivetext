@@ -12,7 +12,8 @@ namespace CodingTest.PredictiveText.Web.Controllers
         // GET: Data
         public ActionResult Index()
         {
-            return View();
+			var data = new Data();
+			return View(data.GetAllWords().ToList());
         }
 
 		public JsonResult Predict(string text)
