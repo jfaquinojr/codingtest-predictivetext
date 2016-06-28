@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace CodingTest.PredictiveText.Web.Controllers
 {
-	public class HomeController : Controller
-	{
-		public ActionResult Index()
-		{
-			return View();
-		}
-	}
+    public class CodesController : Controller
+    {
+        // GET: Codes
+        public ActionResult Index()
+        {
+            return View();
+        }
+    }
 }
